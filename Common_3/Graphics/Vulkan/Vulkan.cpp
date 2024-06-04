@@ -8761,7 +8761,7 @@ void vk_cmdResourceBarrier(Cmd* pCmd, uint32_t numBufferBarriers, BufferBarrier*
     VkPipelineStageFlags srcStageMask = util_determine_pipeline_stage_flags(pCmd->pRenderer, srcAccessFlags, (QueueType)pCmd->mVk.mType);
     VkPipelineStageFlags dstStageMask = util_determine_pipeline_stage_flags(pCmd->pRenderer, dstAccessFlags, (QueueType)pCmd->mVk.mType);
 
-    if (srcAccessFlags || dstAccessFlags)
+    if (imageBarrierCount || srcStageMask || dstStageMask)
     {
         vkCmdPipelineBarrier(pCmd->mVk.pCmdBuf, srcStageMask, dstStageMask, 0, memoryBarrier.srcAccessMask ? 1 : 0,
                              memoryBarrier.srcAccessMask ? &memoryBarrier : NULL, 0, NULL, imageBarrierCount, imageBarriers);

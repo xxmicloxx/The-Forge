@@ -274,7 +274,7 @@ static uint32_t             gUserExtendedSettingsCount = 0;
 
 void addGPUConfigurationRules(ExtendedSettings* pExtendedSettings)
 {
-    fsSetPathForResourceDir(pSystemFileIO, RM_CONTENT, RD_GPU_CONFIG, "GPUCfg");
+    //fsSetPathForResourceDir(pSystemFileIO, RM_CONTENT, RD_GPU_CONFIG, "GPUCfg");
     parseGPUDataFile();
     parseGPUConfigFile(pExtendedSettings);
 }
