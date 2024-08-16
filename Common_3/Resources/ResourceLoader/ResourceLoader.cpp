@@ -3324,7 +3324,7 @@ void addResource(TextureLoadDesc* pTextureDesc, SyncToken* token)
         {
             ResourceState startState = pTextureDesc->pDesc->mStartState;
             // Check whether this is required (user specified a state other than undefined / common)
-            if (startState == RESOURCE_STATE_UNDEFINED || startState == RESOURCE_STATE_COMMON) //-V560
+            if (startState == RESOURCE_STATE_UNDEFINED) //-V560
             {
                 startState = ResourceStartState(pTextureDesc->pDesc->mDescriptors & DESCRIPTOR_TYPE_RW_TEXTURE);
             }

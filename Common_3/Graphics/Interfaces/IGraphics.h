@@ -661,6 +661,8 @@ typedef enum TextureCreationFlags
     /// Creates resolve attachment for auto resolve (MSAA on tiled architecture - Resolve can be done on tile through render pass)
     TEXTURE_CREATION_FLAG_CREATE_RESOLVE_ATTACHMENT = 0x10000,
 #endif
+    /// Force that the image view is created as array
+    TEXTURE_CREATION_FLAG_FORCE_ARRAY = 0x20000,
 } TextureCreationFlags;
 MAKE_ENUM_FLAG(uint32_t, TextureCreationFlags)
 

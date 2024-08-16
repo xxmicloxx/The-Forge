@@ -5531,7 +5531,8 @@ void vk_addTexture(Renderer* pRenderer, const TextureDesc* pDesc, Texture** ppTe
         if (cubemapRequired)
             view_type = (arraySize > 6) ? VK_IMAGE_VIEW_TYPE_CUBE_ARRAY : VK_IMAGE_VIEW_TYPE_CUBE;
         else
-            view_type = arraySize > 1 ? VK_IMAGE_VIEW_TYPE_2D_ARRAY : VK_IMAGE_VIEW_TYPE_2D;
+            view_type =
+                (arraySize > 1 || pDesc->mFlags & TEXTURE_CREATION_FLAG_FORCE_ARRAY) ? VK_IMAGE_VIEW_TYPE_2D_ARRAY : VK_IMAGE_VIEW_TYPE_2D;
         break;
     case VK_IMAGE_TYPE_3D:
         if (arraySize > 1)
