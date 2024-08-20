@@ -2967,6 +2967,7 @@ typedef struct GPUSettings
     uint32_t m64BitAtomicsSupported : 1;
 #if defined(DIRECT3D11) || defined(DIRECT3D12)
     D3D_FEATURE_LEVEL mFeatureLevel;
+    uint32_t          mSuppressInvalidSubresourceStateAfterExit : 1;
 #endif
 #if defined(VULKAN)
     uint32_t mDynamicRenderingSupported : 1;
