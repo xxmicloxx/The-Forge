@@ -534,7 +534,7 @@ void _Write3D(texture3d<T, A> tex, uint3 p, vec<T, 4> v)
 
 #define SHADER_CONSTANT(INDEX, TYPE, NAME, VALUE) constant TYPE NAME [[function_constant(INDEX)]]
 
-#define FSL_CONST(TYPE, NAME) const TYPE NAME
+#define FSL_CONST(TYPE, NAME) constant TYPE NAME
 
 bool any(float2 x) { return any(x!= 0.0f); }
 bool any(float3 x) { return any(x!= 0.0f); }
