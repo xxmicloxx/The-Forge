@@ -3010,8 +3010,10 @@ typedef struct DEFINE_ALIGNED(Renderer, 64)
             ID3D12Device*                            pDevice;
 #endif
 #if defined(_WINDOWS) && defined(FORGE_DEBUG)
-            ID3D12InfoQueue* pDebugValidation;
-            bool             mSuppressMismatchingCommandListDuringPresent;
+            ID3D12InfoQueue1* pDebugValidation;
+            DWORD             mCallbackCookie;
+            bool              mUseDebugCallback;
+            bool              mSuppressMismatchingCommandListDuringPresent;
 #endif
         } mDx;
 #endif
